@@ -1,13 +1,13 @@
 export function radixSort(arr: number[]): number[] {
   // 引数に負の値がある場合は、最小値を0として後から引く
-  const min = Math.min(...arr);
   let adjustNum = 0;
+  const min = arr.reduce((prev, current) => Math.min(prev, current), 0);
   if (min < 0) {
     adjustNum = -min;
     arr = arr.map(v => v + adjustNum);
   }
   // 最大桁数
-  const maxDigits = Math.max(...arr).toString().length;
+  const maxDigits = arr.reduce((prev, current) => Math.max(prev, current), 0).toString().length;
 
   for (let i = 0; i < maxDigits; i++) {
     // 0〜9 を格納する配列

@@ -32,7 +32,7 @@ describe("radixSort", () => {
   });
 
   test("ランダムな値でもソートされる", () => {
-    const randomArr = Array.from({ length: Math.random() * 100 }, _ => Math.random() * 10000);
+    const randomArr = Array.from({ length: Math.random() * 100 }, _ => Math.floor(Math.random() * 10000));
     assert.deepEqual(radixSort(randomArr), randomArr.sort((a, b) => a - b));
   });
 })

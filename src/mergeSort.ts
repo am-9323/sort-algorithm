@@ -1,6 +1,6 @@
 export function mergeSort(arr: number[]): number[] {
-  // 配列長が1ならそのまま帰す
-  if (arr.length == 1) {
+  // 配列長が1以下ならそのまま返す
+  if (arr.length <= 1) {
     return arr;
   }
   //　半分に分けてmergeSortする
